@@ -1,2 +1,2 @@
-const brokenFunction = () => { return 1; };
+const brokenFunction = () => { return 2; };
 module.exports = brokenFunction;
