@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": "lint":"eslint .", 
-  "build": "echo 'Build successful'", 
-  "test": "jest"
+  "scripts": {
+    "start": "node index.js",
+    "lint": "eslint .",
+    "build": "echo 'Build successful'",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
