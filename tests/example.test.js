@@ -1,12 +1,6 @@
-// tests/example.test.js
+const brokenFunction = require('../src/utils');
 
-// Import the function you intend to test
-const brokenFunction = require('../src/utils'); 
-
-// Define the test suite
-test('brokenFunction should return 2', () => { 
-  // This is the expected behavior for the Pokedex to be "bug-free"
+test('should pass', () => { 
+  // The test expects 2, and the corrected function will now return 2.
   expect(brokenFunction()).toBe(2); 
 });
-
-// NOTE: The previous failure was because brokenFunction() was returning 1
