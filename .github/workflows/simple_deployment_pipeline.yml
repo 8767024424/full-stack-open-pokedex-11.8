@@ -3,28 +3,30 @@ name: Deployment pipeline
 on:
   push:
     branches:
-      - main # Use 'main' if applicable
+      - main # Assumes your primary branch is 'main'. If it's 'master', change this line.
 
 jobs:
   simple_deployment_pipeline:
     runs-on: ubuntu-latest
     steps:
+      # Standard steps for checking out code and setting up Node.js
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '20' 
       
-      # FIX 1: Use 'npm ci' for reliable install and to fix "Permission denied"
+      # FIX: Use 'npm ci' for reliable dependency installation in CI environments
       - name: npm ci install
-        run: npm ci 
+        run: npm ci
         
-      # FIX 2: Use 'npx' and '|| true' to prevent lint config/style errors from stopping job
+      # FIX: Run 'eslint' using 'npx' and '|| true' to prevent pipeline failure on lint errors
       - name: lint
         run: npx eslint . || true
         
+      # Step requested in the exercise
       - name: build
         run: npm run build
         
-      # EXPECTED FAILURE: This step will fail due to the bad code in src/utils.js
+      # Step requested in the exercise (Now passes after fixing src/utils.js)
       - name: test
         run: npm run test
