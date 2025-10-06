@@ -3,7 +3,7 @@ name: Deployment pipeline
 on:
   push:
     branches:
-      - master # Use 'main' if applicable
+      - main # Use 'main' if applicable
 
 jobs:
   simple_deployment_pipeline:
